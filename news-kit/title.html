@@ -1,44 +1,61 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>Title</title>
 <style>
 @font-face{font-family:'Archivo Black';src:url(fonts/archivo-black-latin-400-normal.woff2)}
-@font-face{font-family:'Outfit';font-weight:400;src:url(fonts/outfit-latin-400-normal.woff2)}
+@font-face{font-family:'Anton';src:url(fonts/anton-latin-400-normal.woff2)}
+@font-face{font-family:'Playfair Display';font-weight:900;font-style:italic;src:url(fonts/playfair-display-latin-900-italic.woff2)}
 @font-face{font-family:'Outfit';font-weight:600;src:url(fonts/outfit-latin-600-normal.woff2)}
 @font-face{font-family:'JetBrains Mono';font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
 :root{--bg:#0A0A0A;--gold:#F5C842;--red:#FF1F2D}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{background:var(--bg);width:1080px;height:1350px;overflow:hidden}
-body{position:relative;padding:70px 76px 0;color:#fff;
- background:radial-gradient(ellipse 900px 700px at 50% 38%,rgba(255,31,45,.20),transparent 70%),radial-gradient(ellipse 900px 700px at 100% 0%,rgba(60,48,18,.7),transparent 70%),radial-gradient(ellipse 700px 900px at 0% 100%,rgba(28,24,12,.6),transparent 70%),var(--bg)}
-.frame{position:absolute;inset:22px;border:1px solid rgba(212,164,55,.28)}
+body{position:relative;padding:64px 70px 0;color:#fff;
+ background:radial-gradient(ellipse 820px 620px at 30% 42%,rgba(255,31,45,.30),transparent 70%),radial-gradient(ellipse 700px 500px at 100% 100%,rgba(245,200,66,.14),transparent 70%),radial-gradient(ellipse 900px 700px at 100% 0%,rgba(60,48,18,.7),transparent 70%),var(--bg)}
+.stripes{position:absolute;left:0;right:0;top:0;height:16px;background:repeating-linear-gradient(-45deg,var(--red) 0 22px,#0A0A0A 22px 44px)}
+.stripes.b{top:auto;bottom:0}
+.frame{position:absolute;inset:30px;border:1px solid rgba(212,164,55,.28)}
 .c{position:absolute;width:46px;height:46px;border:4px solid var(--gold)}
-.tl{top:14px;left:14px;border-right:0;border-bottom:0}.tr{top:14px;right:14px;border-left:0;border-bottom:0}
-.bl{bottom:14px;left:14px;border-right:0;border-top:0}.br{bottom:14px;right:14px;border-left:0;border-top:0}
-.top{display:flex;justify-content:space-between;align-items:center}
-.date{font-family:'JetBrains Mono';font-weight:700;font-size:20px;color:#9a9a9a;letter-spacing:.1em}
+.tl{top:24px;left:24px;border-right:0;border-bottom:0}.tr{top:24px;right:24px;border-left:0;border-bottom:0}
+.bl{bottom:60px;left:24px;border-right:0;border-top:0}.br{bottom:60px;right:24px;border-left:0;border-top:0}
+.top{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.date{font-family:'JetBrains Mono';font-weight:700;font-size:20px;color:#b0b0b0;letter-spacing:.1em}
 .shield{width:84px}
-.brk{margin-top:28px;display:flex;align-items:center;gap:22px;background:var(--red);padding:20px 34px;width:max-content;box-shadow:0 0 50px rgba(255,31,45,.45)}
-.dot{width:26px;height:26px;border-radius:50%;background:#fff}
-.brk span{font-family:'Archivo Black';font-size:50px;letter-spacing:.06em;line-height:1}
-h1{font-family:'Archivo Black';font-weight:400;font-size:108px;line-height:1;color:var(--red);margin-top:40px;letter-spacing:-2px;text-transform:uppercase;text-shadow:0 0 40px rgba(255,31,45,.35)}
-.sub{font-family:'Outfit';font-weight:600;font-size:38px;line-height:1.25;color:#fff;margin-top:34px}
+.brk{margin-top:26px;display:flex;align-items:stretch;width:max-content;box-shadow:0 0 50px rgba(255,31,45,.5)}
+.brk .live{background:#fff;color:var(--red);font-family:'Archivo Black';font-size:34px;padding:16px 22px;display:flex;align-items:center;gap:12px}
+.brk .live i{width:20px;height:20px;border-radius:50%;background:var(--red);display:block;box-shadow:0 0 0 6px rgba(255,31,45,.3)}
+.brk .t{background:var(--red);font-family:'Archivo Black';font-size:50px;letter-spacing:.05em;padding:14px 32px;line-height:1.1}
+.hl{margin-top:34px;position:relative}
+.s{font-family:'Anton';font-size:118px;line-height:1.02;color:var(--red);text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 36px rgba(255,31,45,.4),0 5px 0 rgba(0,0,0,.5)}
+.s em{font-family:'Playfair Display';font-style:italic;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-2px;font-size:.92em;padding:0 .08em;background:linear-gradient(transparent 62%,rgba(245,200,66,.9) 62% 90%,transparent 90%);text-shadow:0 4px 0 rgba(0,0,0,.45)}
+.sep{height:6px;width:140px;background:var(--gold);margin:22px 0 22px}
+.sub{font-family:'Outfit';font-weight:600;font-size:38px;line-height:1.25;color:#fff;margin-top:34px;max-width:900px}
 .sub b{color:var(--gold)}
-.swipe{position:absolute;left:76px;right:76px;bottom:104px;font-family:'JetBrains Mono';font-weight:700;font-size:24px;letter-spacing:.2em;color:var(--gold);text-align:right}
-.foot{position:absolute;left:76px;right:76px;bottom:50px;display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-weight:700;font-size:19px;letter-spacing:.12em}
+.swipe{position:absolute;left:70px;bottom:150px;background:var(--gold);color:#0A0A0A;font-family:'Archivo Black';font-size:28px;letter-spacing:.08em;padding:18px 30px;box-shadow:0 0 36px rgba(245,200,66,.4)}
+.ticker{position:absolute;left:0;right:0;bottom:60px;background:#000;border-top:2px solid var(--red);border-bottom:2px solid var(--red);padding:12px 0;font-family:'JetBrains Mono';font-weight:700;font-size:20px;letter-spacing:.12em;color:#fff;white-space:nowrap;overflow:hidden;text-align:center}
+.ticker b{color:var(--red)}
+.foot{position:absolute;left:70px;right:70px;bottom:26px;display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-weight:700;font-size:17px;letter-spacing:.12em}
 .foot b{color:var(--gold)}.foot span{color:#9a9a9a}
 </style></head><body>
+<div class="stripes"></div><div class="stripes b"></div>
 <div class="frame"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
 <div class="top"><div class="date" id="date"></div><img class="shield" src="logos/OSU.png" alt=""></div>
-<div class="brk"><div class="dot"></div><span>BREAKING NEWS</span></div>
-<h1 id="h"></h1>
+<div class="brk"><div class="live"><i></i>LIVE</div><div class="t">BREAKING NEWS</div></div>
+<div class="hl" id="hl"></div>
 <div class="sub" id="sub"></div>
 <div class="swipe">SWIPE FOR THE FACTS &rarr;</div>
+<div class="ticker" id="ticker"></div>
 <div class="foot"><b>OPTIONS SNIPERS UNIVERSITY</b><span>@optionssnipersuniversity</span></div>
 <script>
-/* DAILY EDIT BLOCK for the title slide. Keep h to about 8-10 words max (122px font). Must be true and match the sources. */
+/* DAILY EDIT BLOCK for the title slide.
+   lines: 2 SENTENCES (each starts on its own line), ALL CAPS, about 3-6 words each. Wrap the 1-2 most important words of each sentence in *asterisks*: they switch to the white italic serif font with a gold highlight.
+   ticker: 2-3 short verified facts separated by " | ". sub: one line, wrap the key number in <b>. Everything must be true to the sources. */
 const T={
  date:"MON OCT 12, 2026",
- h:"TRUMP SAYS THE TRUCE IS ON. RUSSIA HASN'T CONFIRMED.",
+ lines:["TRUMP SAYS THE *TRUCE* IS ON.","RUSSIA HASN'T *CONFIRMED*."],
+ ticker:"BRENT STILL ABOVE $100 | TRUCE NOT CONFIRMED | YOUR FUEL BILL IS WATCHING",
  sub:"Oil is still above <b>$100</b>. Here is what it could mean for your gas and diesel bill."
 };
-date.textContent=T.date;h.textContent=T.h;sub.innerHTML=T.sub;
+date.textContent=T.date;
+hl.innerHTML=T.lines.map(l=>'<div class="s">'+l.replace(/\*(.+?)\*/g,'<em>$1</em>')+'</div>').join('<div class="sep"></div>');
+sub.innerHTML=T.sub;
+ticker.innerHTML=T.ticker.split(' | ').map(x=>x).join(' <b>&#9679;</b> ');
 </script></body></html>
