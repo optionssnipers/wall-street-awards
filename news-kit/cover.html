@@ -1,0 +1,85 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Cover</title>
+<style>
+@font-face{font-family:'Archivo Black';src:url(fonts/archivo-black-latin-400-normal.woff2)}
+@font-face{font-family:'Anton';src:url(fonts/anton-latin-400-normal.woff2)}
+@font-face{font-family:'Playfair Display';font-weight:900;font-style:italic;src:url(fonts/playfair-display-latin-900-italic.woff2)}
+@font-face{font-family:'Outfit';font-weight:600;src:url(fonts/outfit-latin-600-normal.woff2)}
+@font-face{font-family:'JetBrains Mono';font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
+:root{--bg:#07070a;--gold:#F5C842;--red:#FF1F2D}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--bg);width:1080px;height:1350px;overflow:hidden}
+body{position:relative;color:#fff}
+#bg{position:absolute;inset:0;width:1080px;height:1350px}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,10,.78) 0%,rgba(7,7,10,.15) 30%,rgba(7,7,10,.35) 55%,rgba(7,7,10,.94) 100%)}
+.stripes{position:absolute;left:0;right:0;top:0;height:16px;background:repeating-linear-gradient(-45deg,var(--red) 0 22px,#0A0A0A 22px 44px);z-index:5}
+.stripes.b{top:auto;bottom:0}
+.frame{position:absolute;inset:30px;border:1px solid rgba(212,164,55,.35);z-index:4}
+.c{position:absolute;width:46px;height:46px;border:4px solid var(--gold);z-index:5}
+.tl{top:24px;left:24px;border-right:0;border-bottom:0}.tr{top:24px;right:24px;border-left:0;border-bottom:0}
+.bl{bottom:24px;left:24px;border-right:0;border-top:0}.br{bottom:24px;right:24px;border-left:0;border-top:0}
+.top{position:absolute;left:70px;right:70px;top:62px;display:flex;justify-content:space-between;align-items:center;z-index:6}
+.date{font-family:'JetBrains Mono';font-weight:700;font-size:21px;color:#d0d0d0;letter-spacing:.1em}
+.shield{width:84px}
+.brk{display:flex;align-items:stretch;box-shadow:0 0 50px rgba(255,31,45,.55)}
+.brk .live{background:#fff;color:var(--red);font-family:'Archivo Black';font-size:26px;padding:10px 16px;display:flex;align-items:center;gap:10px}
+.brk .live i{width:16px;height:16px;border-radius:50%;background:var(--red);display:block;box-shadow:0 0 0 5px rgba(255,31,45,.3)}
+.brk .t{background:var(--red);font-family:'Archivo Black';font-size:34px;letter-spacing:.05em;padding:8px 22px;line-height:1.2}
+.logoWrap{position:absolute;left:0;right:0;top:170px;display:flex;flex-direction:column;align-items:center;z-index:6}
+.badge{width:330px;height:330px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#1b2a4a 0%,#0b1226 70%);border:6px solid var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 14px rgba(245,200,66,.12),0 0 90px rgba(245,200,66,.55),0 30px 60px rgba(0,0,0,.6)}
+.badge svg{width:200px;height:200px;fill:#fff;filter:drop-shadow(0 0 18px rgba(255,255,255,.35))}
+.chip{margin-top:26px;font-family:'JetBrains Mono';font-weight:700;font-size:27px;letter-spacing:.2em;color:#0A0A0A;background:var(--gold);padding:10px 22px;box-shadow:0 0 36px rgba(245,200,66,.45)}
+.hl{position:absolute;left:70px;right:70px;top:640px;z-index:6}
+.s{font-family:'Anton';font-size:96px;line-height:1.02;color:#fff;text-transform:uppercase;letter-spacing:1px;text-shadow:0 6px 0 rgba(0,0,0,.55),0 0 40px rgba(0,0,0,.6)}
+.s.r{color:var(--red);text-shadow:0 0 36px rgba(255,31,45,.5),0 6px 0 rgba(0,0,0,.55)}
+.s em{font-family:'Playfair Display';font-style:italic;font-weight:900;color:#fff;letter-spacing:-2px;font-size:.92em;padding:0 .08em;background:linear-gradient(transparent 62%,rgba(245,200,66,.92) 62% 90%,transparent 90%);text-shadow:0 4px 0 rgba(0,0,0,.45)}
+.sub{position:absolute;left:70px;right:70px;top:1040px;font-family:'Outfit';font-weight:600;font-size:37px;line-height:1.25;color:#fff;z-index:6;text-shadow:0 2px 14px rgba(0,0,0,.8)}
+.sub b{color:var(--gold)}
+.swipe{position:absolute;left:70px;bottom:92px;background:var(--gold);color:#0A0A0A;font-family:'Archivo Black';font-size:28px;letter-spacing:.08em;padding:16px 28px;z-index:6;box-shadow:0 0 36px rgba(245,200,66,.4)}
+.foot{position:absolute;left:70px;right:70px;bottom:42px;display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-weight:700;font-size:17px;letter-spacing:.12em;z-index:6}
+.foot b{color:var(--gold)}.foot span{color:#b5b5b5}
+</style></head><body>
+<svg id="bg" viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg"></svg>
+<div class="shade"></div>
+<div class="stripes"></div><div class="stripes b"></div>
+<div class="frame"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
+<div class="top"><div class="brk"><div class="live"><i></i>LIVE</div><div class="t">BREAKING NEWS</div></div><div class="date" id="date"></div></div>
+<div class="logoWrap"><div class="badge" id="badge"></div><div class="chip" id="chip"></div></div>
+<div class="hl" id="hl"></div>
+<div class="sub" id="sub"></div>
+<div class="swipe">&rarr; SWIPE</div>
+<div class="foot"><b>OPTIONS SNIPERS UNIVERSITY</b><span>@optionssnipersuniversity</span></div>
+<script>
+/* DAILY EDIT BLOCK for the COVER slide.
+   logo: inline <svg> path markup of the company logo (white fill); chip: ticker line.
+   lines: 2 SENTENCES, ALL CAPS, each on its own line. *asterisks* = white italic serif + gold highlight. Prefix a line with ! to make it red.
+   sub: one line, key number in <b>. Everything must be true to the sources. */
+const C={
+ date:"WED OCT 14, 2026",
+ chip:"GOLDMAN SACHS  |  NYSE: GS",
+ logo:"<svg role=\"img\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1.963 9.264h1.452v2.378c-.484.098-.855.148-1.262.148C.561 11.79 0 10.878 0 9.377c0-1.614.778-2.526 2.329-2.526.196 0 .567.014 1.03.084v1.522h-.336l-.19-.582c-.183-.553-.4-.827-.744-.827-.596 0-.912.806-.912 2.315 0 1.515.126 2.23.904 2.23.106 0 .231-.014.351-.048V9.776l-.469-.323v-.189Zm1.424 6.382c0 .954-.651 1.501-1.802 1.501-.315 0-.778-.048-1.213-.119v-1.865h.337l.14.441c.315 1.017.54 1.353.94 1.353.421 0 .722-.371.722-.862 0-.399-.189-.68-.595-.898l-.702-.378c-.541-.287-.835-.736-.835-1.283 0-.828.68-1.326 1.796-1.326.252 0 .547.022 1.016.085v1.521h-.337l-.188-.581c-.19-.618-.393-.842-.764-.842-.415 0-.66.266-.66.652 0 .343.19.589.561.799l.708.399c.596.337.876.786.876 1.403Zm3.101 1.102.14.211v.106H5.556l-.05-.407c-.112.308-.407.491-.786.491-.561 0-.912-.351-.912-.926 0-.561.315-.933 1.283-1.311l.414-.161v-.525c0-.463-.085-.652-.344-.652-.21 0-.329.112-.533.623l-.231.573h-.315v-1.144c.414-.126.828-.21 1.185-.21.792 0 1.221.378 1.221 1.066v2.266Zm.405-6.824c0 1.192-.637 1.866-1.459 1.866-.82 0-1.457-.674-1.457-1.866 0-1.193.637-1.866 1.459-1.866.82 0 1.457.673 1.457 1.866Zm-1.387 6.235v-1.213l-.133.056c-.414.169-.569.547-.569 1.101 0 .414.099.652.329.652.231 0 .373-.225.373-.596Zm.357-6.235c0-1.347-.112-1.704-.427-1.704s-.428.357-.428 1.704c0 1.346.113 1.704.428 1.704s.427-.358.427-1.704Zm3.521 6.269.126.064c-.224.646-.511.89-1.066.89-.904 0-1.409-.679-1.409-1.865 0-1.185.589-1.866 1.55-1.866.258 0 .603.042.897.16v1.193h-.329l-.132-.449c-.176-.596-.273-.75-.449-.75-.281 0-.505.365-.505 1.754 0 1.114.168 1.521.595 1.521.287.001.532-.181.722-.652Zm-.779-4.488H7.342v-.104l.141-.211V7.476l-.141-.21V7.16l1.123-.084v4.313l.14.211v.105Zm1.726.085c-.772 0-1.235-.702-1.235-1.901 0-1.192.483-1.83 1.227-1.83.379 0 .589.147.68.441V7.476l-.141-.21V7.16l1.123-.084v4.313l.14.211v.104h-.996l-.077-.533c-.111.457-.321.619-.721.619Zm2.461 4.958.14.211v.106H11.67v-.106l.14-.211v-2.525c0-.301-.091-.483-.309-.483-.26 0-.449.218-.449.645v2.363l.141.211v.106H9.93v-.106l.14-.211v-3.914l-.14-.21v-.105l1.122-.084v1.451c.127-.301.414-.469.82-.469.576 0 .919.365.919 1.073v2.258h.001Zm-2.664-6.846c0 1.263.112 1.648.421 1.648.385 0 .455-.554.455-1.662 0-1.073-.077-1.606-.449-1.606-.315 0-.427.379-.427 1.62Zm7.041 1.487.14.211v.104h-1.262V11.6l.14-.211V8.787c0-.252-.084-.407-.281-.407-.244 0-.441.219-.441.638v2.371l.14.211v.104h-1.262V11.6l.14-.211V8.787c0-.252-.084-.407-.28-.407-.245 0-.442.219-.442.638v2.371l.141.211v.104h-1.263V11.6l.14-.211V8.535l-.14-.169v-.104l1.01-.12h.084l.028.393c.119-.309.414-.477.814-.477.427 0 .708.21.834.589.105-.365.435-.589.856-.589.553 0 .904.365.904 1.072v2.259Zm-1.311 4.644c0 .609-.393 1.114-1.339 1.114-.245 0-.575-.028-1.087-.119v-1.304h.287l.091.281c.224.715.441.982.785.982.323 0 .533-.232.533-.59 0-.294-.147-.497-.497-.687l-.603-.323c-.385-.21-.596-.539-.596-.946 0-.638.499-1.024 1.325-1.024.239 0 .547.034.884.105v1.024h-.287l-.148-.373c-.168-.449-.329-.595-.595-.595-.287 0-.456.168-.456.449 0 .238.141.399.484.595l.595.337c.406.232.624.561.624 1.074Zm4.538-4.644.14.211v.104h-1.073l-.048-.407c-.112.309-.407.491-.786.491-.561 0-.911-.35-.911-.926 0-.561.315-.932 1.283-1.311l.413-.16v-.526c0-.463-.084-.652-.343-.652-.211 0-.329.113-.533.624l-.231.575h-.317V8.27c.415-.127.828-.211 1.185-.211.792 0 1.221.379 1.221 1.066v2.264Zm-.982-.589V9.587l-.133.056c-.413.168-.567.547-.567 1.101 0 .414.098.653.329.653.23 0 .371-.225.371-.597Zm4.586.8v.104h-1.263V11.6l.141-.211V8.864c0-.302-.091-.484-.309-.484-.26 0-.449.219-.449.646v2.363l.14.211v.104h-1.262V11.6l.14-.211V8.535l-.14-.169v-.104l1.01-.12h.084l.028.393c.119-.309.407-.477.82-.477.575 0 .918.365.918 1.072v2.259L24 11.6Z\"/></svg>",
+ lines:["GOLDMAN JUST MADE *$5.3 BILLION*.","!IN *3 MONTHS*."],
+ sub:"Profit up <b>29%</b>. Here is what Wall Street's big week could mean for your money."
+};
+date.textContent=C.date;chip.textContent=C.chip;badge.innerHTML=C.logo;
+hl.innerHTML=C.lines.map(l=>{const r=l[0]==='!';if(r)l=l.slice(1);return '<div class="s'+(r?' r':'')+'">'+l.replace(/\*(.+?)\*/g,'<em>$1</em>')+'</div>'}).join('');
+sub.innerHTML=C.sub;
+/* ---- skyline "photo" background: seeded, night financial district with gold dawn glow ---- */
+(function(){const svg=document.getElementById('bg');let seed=20261014;const R=()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+let h=`<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05060d"/><stop offset=".45" stop-color="#0d1530"/><stop offset=".78" stop-color="#3a2a1c"/><stop offset="1" stop-color="#b9862b"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy="1" r=".7"><stop offset="0" stop-color="#ffd978" stop-opacity=".95"/><stop offset=".4" stop-color="#f5c842" stop-opacity=".35"/><stop offset="1" stop-color="#f5c842" stop-opacity="0"/></radialGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".85"/></linearGradient></defs>
+<rect width="1080" height="1350" fill="url(#sky)"/><rect width="1080" height="1350" fill="url(#glow)"/>`;
+for(let i=0;i<90;i++){h+=`<circle cx="${R()*1080}" cy="${R()*600}" r="${R()*1.6+.3}" fill="#fff" opacity="${R()*.6+.2}"/>`}
+function layer(base,minW,maxW,minH,maxH,col,win,op){let x=-20;let s='';while(x<1100){const w=minW+R()*(maxW-minW),hh=minH+R()*(maxH-minH);s+=`<rect x="${x}" y="${base-hh}" width="${w}" height="${hh+200}" fill="${col}" opacity="${op}"/>`;
+ if(R()<.35){s+=`<rect x="${x+w*.4}" y="${base-hh-60}" width="${w*.2}" height="62" fill="${col}" opacity="${op}"/>`}
+ if(win){for(let wy=base-hh+14;wy<base-8;wy+=15){for(let wx=x+8;wx<x+w-10;wx+=13){if(R()<.30){s+=`<rect x="${wx}" y="${wy}" width="6" height="8" fill="${R()<.8?'#ffd36b':'#fff3c9'}" opacity="${R()*.7+.25}"/>`}}}}
+ x+=w+R()*6}return s}
+h+=layer(1010,60,120,230,520,'#141a33',false,.55);
+h+=layer(1090,70,130,300,700,'#0b0f22',true,.96);
+h+=layer(1190,90,160,260,640,'#05060c',true,1);
+/* candlestick overlay */
+let cx=60,cy=1000,cs='';for(let i=0;i<22;i++){const up=R()<.62;const body=18+R()*60;const wick=body+20+R()*40;const col=up?'#14D9A0':'#E63946';cy+= (up?-1:1)*(R()*22)-6;cy=Math.max(740,Math.min(1060,cy));cs+=`<line x1="${cx}" y1="${cy-wick/2}" x2="${cx}" y2="${cy+wick/2}" stroke="${col}" stroke-width="3" opacity=".55"/><rect x="${cx-9}" y="${cy-body/2}" width="18" height="${body}" fill="${col}" opacity=".55"/>`;cx+=46}
+h+=cs;
+h+=`<rect y="1000" width="1080" height="350" fill="url(#fade)"/>`;
+svg.innerHTML=h})();
+</script></body></html>
