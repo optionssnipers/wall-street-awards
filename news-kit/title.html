@@ -2,8 +2,7 @@
 <style>
 @font-face{font-family:'Archivo Black';src:url(fonts/archivo-black-latin-400-normal.woff2)}
 @font-face{font-family:'Anton';src:url(fonts/anton-latin-400-normal.woff2)}
-@font-face{font-family:'Playfair Display';font-weight:900;font-style:normal;src:url(fonts/playfair-display-latin-900-normal.woff2)}
-@font-face{font-family:'Playfair Display';font-weight:900;font-style:italic;src:url(fonts/playfair-display-latin-900-italic.woff2)}
+@font-face{font-family:'Inter';font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}
 @font-face{font-family:'Outfit';font-weight:600;src:url(fonts/outfit-latin-600-normal.woff2)}
 @font-face{font-family:'JetBrains Mono';font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
 :root{--bg:#0A0A0A;--gold:#F5C842;--red:#FF1F2D}
@@ -26,7 +25,7 @@ body{position:relative;padding:64px 70px 0;color:#fff;
 .brk .t{background:var(--red);font-family:'Archivo Black';font-size:50px;letter-spacing:.05em;padding:14px 32px;line-height:1.1}
 .hl{margin-top:34px;position:relative}
 .s{font-family:'Anton';font-size:118px;line-height:1.02;color:var(--red);text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 36px rgba(255,31,45,.4),0 5px 0 rgba(0,0,0,.5)}
-.s em{font-family:'Playfair Display';font-style:normal;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:0;font-size:.94em;padding:0 .08em;background:linear-gradient(transparent 62%,rgba(245,200,66,.92) 62% 90%,transparent 90%);text-shadow:0 4px 0 rgba(0,0,0,.45)}
+.s em{font-family:'Inter';font-style:normal;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:0;font-size:.94em;padding:0 .08em;background:linear-gradient(transparent 62%,rgba(245,200,66,.92) 62% 90%,transparent 90%);text-shadow:0 4px 0 rgba(0,0,0,.45)}
 .s em.g{color:#14D9A0;background:none;text-shadow:0 0 34px rgba(20,217,160,.55),0 5px 0 rgba(0,0,0,.6)}
 .s em.rd{color:#E63946;background:none;text-shadow:0 0 34px rgba(230,57,70,.5),0 5px 0 rgba(0,0,0,.6)}
 .sep{height:6px;width:140px;background:var(--gold);margin:22px 0 22px}
@@ -52,10 +51,10 @@ body{position:relative;padding:64px 70px 0;color:#fff;
    lines: 2 SENTENCES (each starts on its own line), ALL CAPS, about 3-6 words each. Wrap the 1-2 most important words of each sentence in *asterisks* (bold white serif with gold highlight); use +plus+ for positive words/numbers (green) and ~tildes~ for negative (red). In ticker/sub, +N% shows green and -N% red.
    ticker: 2-3 short verified facts separated by " | ". sub: one line, wrap the key number in <b>. Everything must be true to the sources. */
 const T={
- date:"WED OCT 14, 2026",
- lines:["GOLDMAN +BEAT+ BY A MILE.","TODAY'S *CPI* IS THE TEST."],
- ticker:"GS PROFIT +29% | EQUITIES TRADING +72% | CPI AT 8:30 AM ET",
- sub:"Inflation data lands at <b>8:30 AM ET</b>. Here is what it could mean for your money."
+ date:"THU OCT 15, 2026",
+ lines:["THE *AI* TRADE ~SLID~.", "YOUR *INDEX FUNDS* FELT IT."],
+ ticker:"NASDAQ -1.9% | S&P 500 -1.1% | INFLATION 3.7%",
+ sub:"Worst day for stocks since July. Inflation ran <b>3.7%</b> a year. Here is what it could mean for your wallet."
 };
 date.textContent=T.date;
 hl.innerHTML=T.lines.map(l=>'<div class="s">'+l.replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\+(.+?)\+/g,'<em class="g">$1</em>').replace(/~(.+?)~/g,'<em class="rd">$1</em>')+'</div>').join('<div class="sep"></div>');
