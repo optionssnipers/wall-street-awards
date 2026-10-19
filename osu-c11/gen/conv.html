@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>conv</title>
+<style>
+@font-face{font-family:'Archivo Black';src:url(fonts/archivo-black-latin-400-normal.woff2)}
+@font-face{font-family:'Outfit';font-weight:400;src:url(fonts/outfit-latin-400-normal.woff2)}
+@font-face{font-family:'Outfit';font-weight:600;src:url(fonts/outfit-latin-600-normal.woff2)}
+@font-face{font-family:'JetBrains Mono';font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
+@font-face{font-family:'JetBrains Mono';font-weight:400;src:url(fonts/jetbrains-mono-latin-400-normal.woff2)}
+:root{--gold:#F5C842;--green:#14D9A0;--red:#E63946}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;background:#0A0A0A;overflow:hidden}
+.s{position:relative;width:1080px;height:1350px;color:#fff;background:radial-gradient(ellipse 800px 600px at 100% 0%,rgba(60,48,18,.55),transparent 70%),#0A0A0A}
+.frame{position:absolute;inset:26px;border:1px solid rgba(212,164,55,.22)}
+.c{position:absolute;width:56px;height:56px;border:4px solid var(--gold)}
+.tr{top:22px;right:22px;border-left:0;border-bottom:0}.bl{bottom:22px;left:22px;border-right:0;border-top:0}
+.br{bottom:22px;right:22px;border-left:0;border-top:0}.tl{top:22px;left:22px;border-right:0;border-bottom:0}
+.head{position:absolute;left:70px;top:62px;display:flex;align-items:center;gap:20px;font-family:'JetBrains Mono';font-weight:700;font-size:21px;letter-spacing:.16em;color:var(--gold)}
+.head img{width:70px}
+.foot{position:absolute;left:70px;right:70px;bottom:62px;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono';font-weight:700;font-size:21px;letter-spacing:.12em}
+.foot span{color:#8d8d8d}.foot b{color:var(--gold);background:rgba(245,200,66,.1);border:2px solid var(--gold);padding:12px 22px}
+.body{position:absolute;left:80px;right:80px;top:170px;bottom:170px;display:flex;flex-direction:column;justify-content:center;text-align:center;align-items:center}
+.kick{font-family:'JetBrains Mono';font-weight:700;font-size:26px;letter-spacing:.22em;color:var(--gold);margin-bottom:34px}
+.h{font-family:'Archivo Black';line-height:1.08;letter-spacing:-1.5px;font-size:84px}
+.h.big{font-size:104px;letter-spacing:-2px}
+.sep{width:120px;height:6px;background:var(--gold);margin:40px auto}
+.sub,.txt{font-family:'Outfit';font-weight:400;font-size:42px;line-height:1.3;color:#d2d2d2;margin-top:36px;max-width:880px}
+.sub b,.txt b{color:#fff;font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:56px;width:100%;text-align:left}
+.col{padding:0 34px}.col+.col{border-left:2px solid #2c2c2c}
+.col h4{font-family:'JetBrains Mono';font-weight:700;font-size:25px;letter-spacing:.16em;margin-bottom:28px}
+.col.a h4{color:var(--red)}.col.b h4{color:var(--green)}
+.col li{list-style:none;font-family:'Outfit';font-size:35px;line-height:1.2;margin-bottom:22px;padding-left:34px;position:relative;color:#eee}
+.col li:before{content:"";position:absolute;left:0;top:14px;width:15px;height:15px;border-radius:50%}
+.col.a li:before{background:var(--red)}.col.b li:before{background:var(--green)}
+.foot2{font-family:'JetBrains Mono';font-weight:700;font-size:28px;color:var(--gold);margin-top:42px;letter-spacing:.04em}
+.items{width:100%;text-align:left;margin-top:54px}
+.it{display:flex;gap:30px;align-items:flex-start;margin-bottom:38px}
+.it .n{flex:none;width:62px;height:62px;border:3px solid var(--gold);color:var(--gold);font-family:'JetBrains Mono';font-weight:700;font-size:30px;display:flex;align-items:center;justify-content:center;margin-top:4px}
+.it h5{font-family:'Outfit';font-weight:600;font-size:46px;line-height:1.1;color:#fff}
+.it p{font-family:'Outfit';font-size:34px;line-height:1.25;color:#aeaeae;margin-top:6px}
+.small{font-family:'JetBrains Mono';font-weight:700;font-size:26px;letter-spacing:.2em;color:var(--gold);margin-top:46px}
+.box{border:3px solid var(--gold);padding:34px 40px;margin-top:50px;width:100%;background:rgba(245,200,66,.05)}
+.box i{display:block;font-style:normal;font-family:'JetBrains Mono';font-weight:700;font-size:26px;letter-spacing:.16em;color:var(--gold)}
+.box b{display:block;font-family:'Outfit';font-weight:600;font-size:46px;margin-top:14px}
+.fl{font-family:'Outfit';font-size:30px;color:#9b9b9b;margin-top:38px}
+</style></head><body><div class="s" id="s"></div>
+<script>
+const esc=s=>s;
+window.render=(d,i,n,total)=>{
+ const L=a=>a.join('<br>');
+ let main='';
+ if(d.t==='cover') main=`<div class="kick">${d.kick}</div><div class="h big">${L(d.h)}</div><div class="sep"></div><div class="sub" style="margin-top:0">${d.sub}</div>`;
+ if(d.t==='say') main=`<div class="kick">${d.kick}</div><div class="h">${L(d.h)}</div><div class="sep"></div><div class="txt" style="margin-top:0">${d.body}</div>`;
+ if(d.t==='vs') main=`<div class="kick">${d.kick}</div><div class="h" style="font-size:66px">${L(d.h)}</div><div class="cols"><div class="col a"><h4>${d.a[0]}</h4><ul>${d.a[1].map(x=>'<li>'+x+'</li>').join('')}</ul></div><div class="col b"><h4>${d.b[0]}</h4><ul>${d.b[1].map(x=>'<li>'+x+'</li>').join('')}</ul></div></div><div class="foot2">${d.foot}</div>`;
+ if(d.t==='list') main=`<div class="kick">${d.kick}</div><div class="h" style="font-size:68px">${L(d.h)}</div><div class="items">${d.items.map((x,k)=>`<div class="it"><div class="n">${k+1}</div><div><h5>${x[0]}</h5><p>${x[1]}</p></div></div>`).join('')}</div>`;
+ if(d.t==='shift') main=`<div class="kick">${d.kick}</div><div class="h big" style="font-size:96px">${L(d.big)}</div><div class="small">${d.small}</div>`;
+ if(d.t==='cta') main=`<div class="kick">${d.kick}</div><div class="h">${L(d.h)}</div><div class="txt" style="margin-top:34px;font-size:38px">${d.body}</div><div class="box"><i>7-DAY DISCORD ACCESS TRIAL</i><b>Start at www.optionssnipers.ai</b></div><div class="fl">Follow @optionssnipersuniversity for a lesson a day.</div>`;
+ const label=i===0?'SWIPE TO START &rarr;':(d.t==='cta'?'OPTIONSSNIPERS.AI &rarr;':'KEEP GOING &rarr;');
+ document.getElementById('s').innerHTML=`<div class="frame"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div><div class="head"><img src="logos/OSU.png"><div>OPTIONS SNIPERS UNIVERSITY</div></div><div class="body">${main}</div><div class="foot"><span>@optionssnipersuniversity</span><b>${label}</b></div>`;
+};
+</script></body></html>
