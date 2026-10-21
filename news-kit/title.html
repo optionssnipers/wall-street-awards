@@ -5,11 +5,11 @@
 @font-face{font-family:'Inter';font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}
 @font-face{font-family:'Outfit';font-weight:600;src:url(fonts/outfit-latin-600-normal.woff2)}
 @font-face{font-family:'JetBrains Mono';font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
-:root{--bg:#0A0A0A;--gold:#F5C842;--red:#FF1F2D}
+:root{--bg:#0A0A0A;--gold:#F5C842;--red:#F5C842}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{background:var(--bg);width:1080px;height:1350px;overflow:hidden}
 body{position:relative;padding:64px 70px 0;color:#fff;
- background:radial-gradient(ellipse 820px 620px at 30% 42%,rgba(255,31,45,.30),transparent 70%),radial-gradient(ellipse 700px 500px at 100% 100%,rgba(245,200,66,.14),transparent 70%),radial-gradient(ellipse 900px 700px at 100% 0%,rgba(60,48,18,.7),transparent 70%),var(--bg)}
+ background:radial-gradient(ellipse 820px 620px at 30% 42%,rgba(245,200,66,.16),transparent 70%),radial-gradient(ellipse 700px 500px at 100% 100%,rgba(245,200,66,.14),transparent 70%),radial-gradient(ellipse 900px 700px at 100% 0%,rgba(60,48,18,.7),transparent 70%),var(--bg)}
 .stripes{position:absolute;left:0;right:0;top:0;height:16px;background:repeating-linear-gradient(-45deg,var(--red) 0 22px,#0A0A0A 22px 44px)}
 .stripes.b{top:auto;bottom:0}
 .frame{position:absolute;inset:30px;border:1px solid rgba(212,164,55,.28)}
@@ -19,12 +19,12 @@ body{position:relative;padding:64px 70px 0;color:#fff;
 .top{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
 .date{font-family:'JetBrains Mono';font-weight:700;font-size:20px;color:#b0b0b0;letter-spacing:.1em}
 .shield{width:84px}
-.brk{margin-top:26px;display:flex;align-items:stretch;width:max-content;box-shadow:0 0 50px rgba(255,31,45,.5)}
-.brk .live{background:#fff;color:var(--red);font-family:'Archivo Black';font-size:34px;padding:16px 22px;display:flex;align-items:center;gap:12px}
-.brk .live i{width:20px;height:20px;border-radius:50%;background:var(--red);display:block;box-shadow:0 0 0 6px rgba(255,31,45,.3)}
-.brk .t{background:var(--red);font-family:'Archivo Black';font-size:50px;letter-spacing:.05em;padding:14px 32px;line-height:1.1}
+.brk{margin-top:26px;display:flex;align-items:stretch;width:max-content;box-shadow:0 0 50px rgba(245,200,66,.4)}
+.brk .live{background:#fff;color:#0A0A0A;font-family:'Archivo Black';font-size:34px;padding:16px 22px;display:flex;align-items:center;gap:12px}
+.brk .live i{width:20px;height:20px;border-radius:50%;background:#D4A437;display:block;box-shadow:0 0 0 6px rgba(212,164,55,.3)}
+.brk .t{background:var(--gold);color:#0A0A0A;font-family:'Archivo Black';font-size:50px;letter-spacing:.05em;padding:14px 32px;line-height:1.1}
 .hl{margin-top:34px;position:relative}
-.s{font-family:'Anton';font-size:118px;line-height:1.02;color:var(--red);text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 36px rgba(255,31,45,.4),0 5px 0 rgba(0,0,0,.5)}
+.s{font-family:'Anton';font-size:118px;line-height:1.02;color:#fff;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 36px rgba(245,200,66,.25),0 5px 0 rgba(0,0,0,.5)}
 .s em{font-family:'Inter';font-style:normal;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:0;font-size:.94em;padding:0 .08em;background:linear-gradient(transparent 62%,rgba(245,200,66,.92) 62% 90%,transparent 90%);text-shadow:0 4px 0 rgba(0,0,0,.45)}
 .s em.g{color:#14D9A0;background:none;text-shadow:0 0 34px rgba(20,217,160,.55),0 5px 0 rgba(0,0,0,.6)}
 .s em.rd{color:#E63946;background:none;text-shadow:0 0 34px rgba(230,57,70,.5),0 5px 0 rgba(0,0,0,.6)}
@@ -51,10 +51,10 @@ body{position:relative;padding:64px 70px 0;color:#fff;
    lines: 2 SENTENCES (each starts on its own line), ALL CAPS, about 3-6 words each. Wrap the 1-2 most important words of each sentence in *asterisks* (bold white serif with gold highlight); use +plus+ for positive words/numbers (green) and ~tildes~ for negative (red). In ticker/sub, +N% shows green and -N% red.
    ticker: 2-3 short verified facts separated by " | ". sub: one line, wrap the key number in <b>. Everything must be true to the sources. */
 const T={
- date:"THU OCT 15, 2026",
- lines:["THE *AI* TRADE ~SLID~.", "YOUR *INDEX FUNDS* FELT IT."],
- ticker:"NASDAQ -1.9% | S&P 500 -1.1% | INFLATION 3.7%",
- sub:"Worst day for stocks since July. Inflation ran <b>3.7%</b> a year. Here is what it could mean for your wallet."
+ date:"WED OCT 21, 2026",
+ lines:["SPACEX +FLIPPED TO PROFIT+.", "*AI* BEAT *STARLINK*."],
+ ticker:"REVENUE +161% | NET INCOME $4.4B | EPS $0.35",
+ sub:"After a <b style=\"color:#E63946\">$541M</b> loss in Q2, SpaceX says AI sales hit <b>$7.56B</b>. Here is what it could mean for your wallet."
 };
 date.textContent=T.date;
 hl.innerHTML=T.lines.map(l=>'<div class="s">'+l.replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\+(.+?)\+/g,'<em class="g">$1</em>').replace(/~(.+?)~/g,'<em class="rd">$1</em>')+'</div>').join('<div class="sep"></div>');
