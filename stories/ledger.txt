@@ -9,3 +9,4 @@ manifest:STRAT-05-DESCTRI|workshop
 awards:2026-10-19
 news:2026-10-24
 manifest:STRAT-06-CHANNEL|share
+news:2026-10-25
