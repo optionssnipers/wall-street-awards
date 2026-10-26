@@ -12,3 +12,5 @@ manifest:STRAT-06-CHANNEL|share
 news:2026-10-25
 manifest:STRAT-07-BULLFLAG|comment
 news:2026-10-26
+watchlist:2026-10-26
+manifest:STRAT-08-BEARFLAG|workshop
