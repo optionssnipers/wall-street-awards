@@ -16,3 +16,4 @@ watchlist:2026-10-26
 manifest:STRAT-08-BEARFLAG|workshop
 watchlist:2026-10-27
 news:2026-10-27
+manifest:STRAT-01-9EMA|share
